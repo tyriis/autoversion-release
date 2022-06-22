@@ -9022,7 +9022,7 @@ async function run () {
             pull_number: github.context.payload.number,
         });
 
-        console.log(`The pullRequest Payload: ${pullRequest}`);
+        console.log(`The pullRequest Payload: ${SON.stringify(pullRequest, undefined, 2)}`);
       } catch (error) {
         core.setFailed(error.message);
       }
