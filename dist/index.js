@@ -9002,7 +9002,7 @@ async function run () {
         const time = (new Date()).toTimeString();
         core.setOutput("time", time);
         // Get the JSON webhook payload for the event that triggered the workflow
-        const payload = JSON.stringify(github.context.payload, undefined, 2)
+        const payload = JSON.stringify(github.context.payload.base, undefined, 2)
         console.log(`The event payload: ${payload}`);
         // This should be a token with access to your repository scoped in as a secret.
         // The YML workflow will need to set myToken with the GitHub Secret Token
