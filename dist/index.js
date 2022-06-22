@@ -9016,9 +9016,9 @@ async function run () {
         // const octokit = github.getOctokit(myToken, {userAgent: "MyActionVersion1"});
 
         const { data: pullRequest } = await octokit.rest.pulls.get({
-            owner: payload.base.repo.owner.login,
-            repo: payload.base.repo.name,
-            pull_number: payload.number,
+            owner: github.context.payload.base.repo.owner.login,
+            repo: github.context.payload.base.repo.name,
+            pull_number: github.context.payload.number,
         });
 
         console.log(`The pullRequest Payload: ${pullRequest}`);
