@@ -18,6 +18,6 @@ The semantic version type
 
 ```yaml
 - name: Detect release type
-  uses: tyriis/autoversion-release@v1.16
+  uses: tyriis/semver-from-pr-label-action@v1.17
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
