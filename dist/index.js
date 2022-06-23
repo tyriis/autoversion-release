@@ -9009,7 +9009,7 @@ function getReleaseType (labels) {
     if (labels.indexOf('major') >= 0) {
         return RELEASE_TYPE_MAJOR
     }
-    if (labels.indexOf('minor')) {
+    if (labels.indexOf('minor') >= 0) {
         return RELEASE_TYPE_MINOR
     }
     return RELEASE_TYPE_PATCH
