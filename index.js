@@ -29,7 +29,9 @@ async function run () {
             pull_number: github.context.payload.number,
         });
 
-        console.log(`The pullRequest Payload: ${JSON.stringify(pullRequest, undefined, 2)}`);
+        await octokit.graphql()
+
+        console.log(`The pullRequest Payload: ${JSON.stringify(pullRequest.labels, undefined, 2)}`);
       } catch (error) {
         core.setFailed(error.message);
       }
