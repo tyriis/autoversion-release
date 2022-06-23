@@ -1,21 +1,23 @@
-# Hello world javascript action
+# semver from pr label action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action can be used on pr merged to determine a semver increasement
 
 ## Inputs
 
-## `who-to-greet`
+## `GITHUB_TOKEN`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The GITHUB_TOKEN is required to access the GitHub API to read pull request details.
 
 ## Outputs
 
-## `time`
+## `versionType`
 
-The time we greeted you.
+The semantic version type
 
 ## Example usage
 
-uses: actions/hello-world-javascript-action@v1.1
-with:
-  who-to-greet: 'Mona the Octocat'
+```yaml
+- name: Detect release type
+  uses: tyriis/autoversion-release@v1.16
+  with:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,4 @@
-name: 'Release from labels'
+name: 'Semver from pr labels'
 description: 'Determine the semantic release type based on the labels'
 inputs:
   GITHUB_TOKEN: # the github token
@@ -6,7 +6,7 @@ inputs:
     required: true
 outputs:
   releaseType: # skip, patch, minor, major
-    description: 'the semantic release type'
+    description: 'The semantic release type'
 runs:
   using: 'node16'
   main: 'dist/index.js'
