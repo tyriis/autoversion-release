@@ -21,3 +21,4 @@ The semantic version type
   uses: tyriis/semver-from-pr-label-action@v1.17
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
