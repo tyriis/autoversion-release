@@ -10,6 +10,12 @@ function getReleaseType (labels) {
     if (labels.indexOf('skip-release') >= 0) {
         return RELEASE_TYPE_SKIP
     }
+    if (labels.indexOf('pre-commit')) {
+        return RELEASE_TYPE_SKIP
+    }
+    if (labels.indexOf('github-actions')) {
+        return RELEASE_TYPE_SKIP
+    }
     if (labels.indexOf('dev') >= 0 && labels.indexOf('dependencies') >= 0) {
         return RELEASE_TYPE_PATCH
     }
